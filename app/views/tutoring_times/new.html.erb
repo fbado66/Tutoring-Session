@@ -1,0 +1,14 @@
+<div class='content'>
+    <h1> Tutoring Session</h1>
+
+    <%= form_for @tutoring_time do |f| %>
+    <%= f.label :student_id, "Student" %>
+    <%= f.collection_select :student_id, @students, :id, :name %> 
+    <%= f.label :coach_id, "Coach" %>
+    <%= f.collection_select :coach_id, @coaches, :id, :name %> 
+    <%= f.label :appointment_time %>
+    <%= f.datetime_select :appointment_time %>
+
+    <%=f.submit "New Session" %>
+    <% end %>
+    </div>

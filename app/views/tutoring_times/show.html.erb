@@ -1,0 +1,18 @@
+<div class='content'>
+    <h1> Tutoring Session for <%=@tutoring_time.student.name %> </h1>
+
+
+    <p>
+        Date: <strong><%=@tutoring_time.appointment_time %></strong> <br>
+        Coach: <strong><%=@tutoring_time.coach.name %></strong> <br>
+        Student: <strong><%=@tutoring_time.student.name %></strong> <br>
+        On <strong><%=@tutoring_time.student.language %></strong> language <br>
+    </p>
+    <br><br>
+    <span class='button'> <%=link_to "EDIT", edit_tutoring_time_path %></span><br><br><br>
+    <span class='button'> <%=link_to "DELETE", @tutoring_time, :method => :delete %></span><br><br><br>
+    <span class='button'> <%=link_to "GO TO STUDENT'S PAGE", student_path(@tutoring_time.student) %></span><br><br><br>
+    <span class='button'> <%=link_to "GO TO COACH'S PAGE", coach_path(@tutoring_time.coach) %></span>
+
+
+</div>

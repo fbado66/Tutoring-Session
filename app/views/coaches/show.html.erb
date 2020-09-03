@@ -1,0 +1,21 @@
+<div class='content'>
+    <h1> Information about <%=@coach.name %></h1>
+    <p>Years of Experience: <%= @coach.experience_years %></p>
+
+    <br><br>
+    <span class='button'><%=link_to "EDIT", edit_coach_path %></span><br><br><br>
+    <span class='button'><%=link_to "GO BACK", coaches_path %></span>
+
+    <br><br><br>
+    <% if @coach.tutoring_times.count > 0 %>
+        <h2>List of appointments</h2>
+        <br>
+        <p><% @coach.tutoring_times.map do |session| %>
+        On: <strong><%= link_to session.appointment_time, tutoring_time_path(session) %></strong> - 
+        with <strong><%= session.student.name %></strong> - 
+        On <strong><%= session.student.language %> </strong> language </p>
+        <% end %>
+    <% else %>
+    <h2>This coach has no appointments at this moment</h2>
+    <% end %>
+</div>

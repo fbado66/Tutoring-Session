@@ -1,0 +1,9 @@
+<h1> Update Coach Form</h1>
+
+<%= form_for @coach do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %> 
+<%= f.label :experience_years %>
+<%= f.number_field :experience_years %><br><br>
+<%=f.submit "Update Coach" %>
+<% end %>

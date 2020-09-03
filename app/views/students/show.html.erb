@@ -1,0 +1,18 @@
+<div class='content'>
+    <h1><%=@student.name %>'s page</h1>
+
+    <p>Language: <strong><%= @student.language %></strong></p>
+    <p>Age: <%= @student.age %></p>
+    <% if @student.tutoring_times.count > 0 %>
+        <h2>Upcoming appointments</h2>
+            <p><% @student.tutoring_times.map do |session| %>
+                <%= link_to session.id, tutoring_time_path(session.id) %>.
+                Coach: <strong><%= link_to session.coach.name, coach_path(session.coach)%></strong> - 
+                Date and Time: <strong><%= session.appointment_time %></strong></p>
+            <% end %>
+        <% else %>
+        <p> Current Student has no appointments booked yet</p>
+        <% end %>
+        <br><br>
+        <span class='button'> <%=link_to "CREATE A TUTORING SESSION", new_tutoring_time_path %></span>
+</div>

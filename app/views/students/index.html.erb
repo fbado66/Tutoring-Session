@@ -1,0 +1,11 @@
+<div class='content'>
+    <h1> List of current Students</h1>
+
+    <% @students.map do |student_info| %>
+    <p>Student Name: <strong><%=link_to student_info.name, student_path(student_info) %></strong>
+    - Language: <strong><%=student_info.language %></strong> </p> 
+    <% end %>
+        <br><br><br>
+    <span class='button'><%= link_to "Create a New Student", new_student_path %></span>
+
+</div>
